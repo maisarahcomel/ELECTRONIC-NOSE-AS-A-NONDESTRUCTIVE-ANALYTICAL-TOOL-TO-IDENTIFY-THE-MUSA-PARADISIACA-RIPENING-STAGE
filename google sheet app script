@@ -1,0 +1,11 @@
+var sheet_id = "1BfH_cDAlcCbhcV9lRZZMFiM4D9ivTZbBKGGKrhvN1lg";
+var sheet_name = "sensor";
+function doGet(e){
+var ss = SpreadsheetApp.openById(sheet_id);
+var sheet = ss.getSheetByName(sheet_name);
+var date = e.parameter.date;
+var time = e.parameter.time;
+var mq2 = e.parameter.mq2;
+var mq4 = e.parameter.mq4;
+sheet.appendRow([date,time,mq4,mq2]);
+}
